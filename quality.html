@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Assurance | Bluesun International LLC</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "brand-blue": "#0073CF",
+                        "brand-blue-light": "#6eb5ff",
+                        "brand-dark": "#0A1118",
+                        "primary": "#000f22",
+                        "surface": "#f8fafc",
+                        "surface-container": "#f1f5f9",
+                        "surface-container-low": "#f8fafc",
+                        "surface-container-high": "#e2e8f0",
+                        "on-surface": "#0f172a",
+                        "on-surface-variant": "#475569",
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    boxShadow: {
+                        "luxury": "0 20px 50px rgba(0, 0, 0, 0.05)",
+                        "blue": "0 10px 30px rgba(0, 115, 207, 0.3)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .hero-zoom {
+            animation: zoom 20s infinite alternate;
+        }
+
+        @keyframes zoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .float-anim {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+        }
+    </style>
+</head>
+
+<body class="bg-white font-body text-on-surface antialiased">
+    <!-- Top Bar -->
+    <div class="bg-brand-dark text-white/70 py-2.5 px-8 hidden md:block border-b border-white/5 relative z-[60]">
+        <div class="max-w-[1440px] mx-auto flex justify-between items-center text-[11px] font-bold tracking-[0.15em] uppercase">
+            <div class="flex gap-8">
+                <div class="flex items-center gap-2 group hover:text-white transition-colors cursor-pointer">
+                    <span class="material-symbols-outlined text-[16px] text-brand-blue group-hover:scale-110 transition-transform">call</span>
+                    <span class="tracking-wide">+968 22584259</span>
+                </div>
+                <div class="flex items-center gap-2 group hover:text-white transition-colors cursor-pointer">
+                    <span class="material-symbols-outlined text-[16px] text-brand-blue group-hover:scale-110 transition-transform">mail</span>
+                    <span class="tracking-wide">sales@bluesun-om.com</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-brand-blue font-bold">
+                <span class="material-symbols-outlined text-[16px]">verified</span>
+                <span>An ISO 9001 : 2005 Certified Company</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav id="main-nav" class="sticky top-0 w-full z-40 bg-white/70 backdrop-blur-2xl border-b border-surface-container transition-all duration-500">
+        <div class="flex justify-between items-center max-w-[1440px] mx-auto px-8 py-5 lg:py-6">
+            <div class="h-10 lg:h-12 relative z-50">
+                <img src="img/logo.png" alt="Bluesun International Logo" class="h-full object-contain">
+            </div>
+
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-on-surface-variant hover:text-brand-dark font-medium font-headline text-[13px] uppercase tracking-widest border-b-2 border-transparent hover:border-brand-blue/50 pb-1 transition-all">Home</a>
+                <a href="profile.html" class="text-on-surface-variant hover:text-brand-dark font-medium font-headline text-[13px] uppercase tracking-widest border-b-2 border-transparent hover:border-brand-blue/50 pb-1 transition-all">Profile</a>
+                <a href="divisions.html" class="text-on-surface-variant hover:text-brand-dark font-medium font-headline text-[13px] uppercase tracking-widest border-b-2 border-transparent hover:border-brand-blue/50 pb-1 transition-all">Divisions</a>
+                <a href="services.html" class="text-on-surface-variant hover:text-brand-dark font-medium font-headline text-[13px] uppercase tracking-widest border-b-2 border-transparent hover:border-brand-blue/50 pb-1 transition-all">Services</a>
+                <a href="quality.html" class="text-brand-dark font-bold font-headline text-[13px] uppercase tracking-widest border-b-2 border-brand-blue pb-1 transition-all">Quality</a>
+                <a href="careers.html" class="text-on-surface-variant hover:text-brand-dark font-medium font-headline text-[13px] uppercase tracking-widest border-b-2 border-transparent hover:border-brand-blue/50 pb-1 transition-all">Career</a>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <a href="index.html#contact" class="hidden lg:flex bg-brand-dark text-white px-8 py-3.5 text-xs font-bold font-headline tracking-[0.15em] uppercase transition-all duration-300 hover:bg-brand-blue hover:shadow-blue hover:-translate-y-0.5 border border-transparent">
+                    Enquiry Us
+                </a>
+                <button id="mobile-menu-btn" class="lg:hidden text-brand-dark focus:outline-none">
+                    <span class="material-symbols-outlined text-3xl">menu_open</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 z-30 bg-white pt-32 px-8">
+        <div class="flex flex-col space-y-6">
+            <a href="index.html" class="text-2xl font-headline font-light text-on-surface border-b border-surface-container pb-4">Home</a>
+            <a href="profile.html" class="text-2xl font-headline font-light text-on-surface border-b border-surface-container pb-4">Profile</a>
+            <a href="divisions.html" class="text-2xl font-headline font-light text-on-surface border-b border-surface-container pb-4">Divisions</a>
+            <a href="services.html" class="text-2xl font-headline font-light text-on-surface border-b border-surface-container pb-4">Services</a>
+            <a href="quality.html" class="text-2xl font-serif italic text-brand-blue border-b border-surface-container pb-4">Quality</a>
+            <a href="careers.html" class="text-2xl font-headline font-light text-on-surface border-b border-surface-container pb-4">Career</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[90vh] flex items-center overflow-hidden bg-brand-dark">
+            <div class="absolute inset-0 z-0">
+                <img src="img/quality.jpg" alt="Quality Assurance" class="w-full h-full object-cover opacity-40 hero-zoom">
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent"></div>
+            </div>
+            <div class="max-w-[1440px] mx-auto px-8 relative z-10 w-full">
+                <div class="max-w-3xl reveal">
+                    <span class="inline-block px-4 py-1 mb-6 bg-brand-blue/20 text-brand-blue-light font-bold text-[10px] tracking-widest uppercase rounded-full border border-brand-blue/30">Excellence Standards</span>
+                    <h1 class="text-6xl md:text-8xl font-extrabold text-white font-headline leading-[0.9] tracking-tighter mb-8">
+                        Quality <br/><span class="text-brand-blue">Assurance.</span>
+                    </h1>
+                    <p class="text-xl text-white/70 max-w-2xl leading-relaxed font-light mb-10">
+                        At Bluesun International LLC, we redefine reliability. Our commitment to continuous improvement and uncompromising excellence ensures that every product passing through our facilities meets the world's most rigorous performance benchmarks.
+                    </p>
+                    <div class="flex gap-6">
+                        <a href="#process" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-xl font-bold hover:bg-white/20 transition-all flex items-center gap-2">
+                            Our Process <span class="material-symbols-outlined text-sm">arrow_downward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Stats Card -->
+            <div class="absolute bottom-12 right-12 hidden lg:block reveal">
+                <div class="bg-white/10 backdrop-blur-xl p-8 rounded-[2rem] border border-white/10 flex items-center gap-10 shadow-luxury float-anim">
+                    <div class="text-center">
+                        <div class="text-5xl font-black text-white">99.9%</div>
+                        <div class="text-[10px] uppercase tracking-widest text-white/60 mt-1 font-bold">Compliance Rating</div>
+                    </div>
+                    <div class="h-16 w-px bg-white/20"></div>
+                    <div class="text-center">
+                        <div class="text-5xl font-black text-brand-blue">ISO</div>
+                        <div class="text-[10px] uppercase tracking-widest text-white/60 mt-1 font-bold">Certified Facility</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Commitment to Precision -->
+        <section id="process" class="bg-white py-24 md:py-32 overflow-hidden">
+            <div class="max-w-[1440px] mx-auto px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8 reveal">
+                    <div class="max-w-2xl">
+                        <h2 class="font-headline text-5xl font-extrabold tracking-tighter text-brand-dark mb-6">Our Commitment to <span class="text-brand-blue">Precision</span></h2>
+                        <p class="text-on-surface-variant text-xl leading-relaxed">
+                            We don't just inspect; we innovate. Our quality lifecycle integrates real-time data analytics with traditional engineering rigor.
+                        </p>
+                    </div>
+                    <div class="flex gap-3 h-2 items-center">
+                        <div class="w-16 h-full bg-brand-blue rounded-full"></div>
+                        <div class="w-4 h-full bg-brand-dark/10 rounded-full"></div>
+                        <div class="w-4 h-full bg-brand-dark/10 rounded-full"></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-surface-container-high rounded-[2.5rem] overflow-hidden border border-surface-container-high shadow-luxury">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-12 hover:bg-brand-dark transition-all duration-500 group cursor-default reveal">
+                        <div class="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-blue transition-all duration-500">
+                            <span class="material-symbols-outlined text-3xl text-brand-blue group-hover:text-white">fact_check</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold mb-4 group-hover:text-white transition-all">Strict Checks</h3>
+                        <p class="text-on-surface-variant text-base leading-relaxed group-hover:text-white/70 transition-all">
+                            Multi-stage verification protocols covering raw materials through to final assembly and dispatch.
+                        </p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-12 hover:bg-brand-dark transition-all duration-500 group cursor-default reveal" style="transition-delay: 100ms;">
+                        <div class="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-blue transition-all duration-500">
+                            <span class="material-symbols-outlined text-3xl text-brand-blue group-hover:text-white">verified_user</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold mb-4 group-hover:text-white transition-all">Reliable Products</h3>
+                        <p class="text-on-surface-variant text-base leading-relaxed group-hover:text-white/70 transition-all">
+                            Durability testing that simulates extreme environmental conditions to guarantee long-term field performance.
+                        </p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-12 hover:bg-brand-dark transition-all duration-500 group cursor-default reveal" style="transition-delay: 200ms;">
+                        <div class="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-blue transition-all duration-500">
+                            <span class="material-symbols-outlined text-3xl text-brand-blue group-hover:text-white">gavel</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold mb-4 group-hover:text-white transition-all">Compliance</h3>
+                        <p class="text-on-surface-variant text-base leading-relaxed group-hover:text-white/70 transition-all">
+                            Full adherence to international ISO standards and local regulatory requirements across markets.
+                        </p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-white p-12 hover:bg-brand-dark transition-all duration-500 group cursor-default reveal" style="transition-delay: 300ms;">
+                        <div class="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-blue transition-all duration-500">
+                            <span class="material-symbols-outlined text-3xl text-brand-blue group-hover:text-white">monitoring</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold mb-4 group-hover:text-white transition-all">Traceability</h3>
+                        <p class="text-on-surface-variant text-base leading-relaxed group-hover:text-white/70 transition-all">
+                            End-to-end digital tracking of components ensures total transparency throughout the supply chain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Advanced Facilities -->
+        <section class="bg-surface overflow-hidden">
+            <div class="max-w-[1920px] mx-auto flex flex-col lg:flex-row">
+                <!-- Image Side -->
+                <div class="lg:w-1/2 relative min-h-[600px] reveal">
+                    <img src="img/qua.jpg" alt="Advanced Facilities" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-brand-blue/10 mix-blend-multiply"></div>
+                    <div class="absolute bottom-12 left-12 bg-white/90 backdrop-blur-md p-10 rounded-3xl max-w-md shadow-luxury reveal">
+                        <div class="flex items-center gap-3 text-brand-blue mb-4">
+                            <span class="material-symbols-outlined">verified</span>
+                            <span class="text-[11px] font-bold uppercase tracking-[0.2em]">Quality Control</span>
+                        </div>
+                        <p class="text-brand-dark font-extrabold text-lg leading-relaxed">ISO certified processes ensuring excellence across all industrial operations.</p>
+                    </div>
+                </div>
+                <!-- Content Side -->
+                <div class="lg:w-1/2 p-12 md:p-24 lg:p-32 flex flex-col justify-center bg-white reveal">
+                    <h2 class="font-headline text-5xl font-black text-brand-dark leading-[1.1] mb-8 tracking-tighter">Advanced Facilities <br/>& Innovation</h2>
+                    <p class="text-on-surface-variant text-xl leading-relaxed mb-12">
+                        To maintain the highest standards, we regularly upgrade our facilities, tools, and processes. As a forward-thinking company, we continuously adapt to changing market demands by offering innovative and customized solutions for various industries.
+                    </p>
+                    <div class="space-y-10">
+                        <div class="flex gap-8 group">
+                            <div class="shrink-0 w-14 h-14 flex items-center justify-center rounded-2xl bg-surface-container text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-500">
+                                <span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-brand-dark mb-2 text-lg uppercase tracking-tight">Advanced Machinery</h4>
+                                <p class="text-on-surface-variant leading-relaxed">Equipped with high-precision industrial tools for superior manufacturing and testing.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-8 group">
+                            <div class="shrink-0 w-14 h-14 flex items-center justify-center rounded-2xl bg-surface-container text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-500">
+                                <span class="material-symbols-outlined text-3xl">engineering</span>
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-brand-dark mb-2 text-lg uppercase tracking-tight">Expert Engineering</h4>
+                                <p class="text-on-surface-variant leading-relaxed">A team of specialized engineers dedicated to operational efficiency and customized solutions.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-8 group">
+                            <div class="shrink-0 w-14 h-14 flex items-center justify-center rounded-2xl bg-surface-container text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-500">
+                                <span class="material-symbols-outlined text-3xl">health_and_safety</span>
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-brand-dark mb-2 text-lg uppercase tracking-tight">Safety First</h4>
+                                <p class="text-on-surface-variant leading-relaxed">Rigorous safety protocols integrated into every facility and operational process.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Bento Layout -->
+        <section class="py-32 bg-white relative overflow-hidden">
+            <div class="max-w-[1440px] mx-auto px-8">
+                <div class="text-center mb-24 reveal">
+                    <span class="text-brand-blue font-bold text-[11px] tracking-[0.4em] uppercase mb-4 block">Core Values</span>
+                    <h2 class="font-headline text-5xl md:text-6xl font-black text-brand-dark tracking-tighter">Why Quality Matters to Us</h2>
+                    <p class="text-on-surface-variant max-w-3xl mx-auto text-xl mt-6">
+                        We believe that trust is built through consistency, performance, and commitment. That is why our customers rely on Bluesun International LLC for products and services that deliver long-term value, safety, and operational excellence.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-[320px]">
+                    <!-- Bento 1 -->
+                    <div class="md:col-span-2 bg-brand-dark rounded-[3rem] p-12 flex flex-col justify-end relative overflow-hidden group reveal">
+                        <img src="img/qc_new_ship.jpg" alt="Value" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-1000">
+                        <div class="relative z-10">
+                            <h3 class="text-white text-4xl font-black mb-4 tracking-tighter">Long-term Value</h3>
+                            <p class="text-white/70 text-lg max-w-md leading-relaxed font-light">
+                                Our focus on quality reduces downtime and maintenance costs, ensuring higher ROI for your operations.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Bento 2 -->
+                    <div class="bg-brand-blue rounded-[3rem] p-12 flex flex-col justify-between relative overflow-hidden group reveal" style="transition-delay: 100ms;">
+                        <span class="material-symbols-outlined text-white text-6xl" style="font-variation-settings: 'FILL' 1;">handshake</span>
+                        <div class="relative z-10">
+                            <h3 class="text-white text-2xl font-extrabold mb-3 uppercase tracking-tight">Unwavering Trust</h3>
+                            <p class="text-white/80 text-sm leading-relaxed">A decade of zero-failure delivery across industrial sectors worldwide.</p>
+                        </div>
+                        <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                    </div>
+                    <!-- Bento 3 -->
+                    <div class="bg-surface p-12 rounded-[3rem] border border-surface-container flex flex-col justify-center relative overflow-hidden reveal shadow-sm" style="transition-delay: 200ms;">
+                        <h3 class="text-brand-dark text-5xl font-black mb-4 tracking-tighter italic">Consistency</h3>
+                        <p class="text-on-surface-variant text-lg leading-relaxed">Whether it's one unit or one million, the standard remains identical.</p>
+                    </div>
+                    <!-- Bento 4 -->
+                    <div class="md:col-span-2 bg-surface-container rounded-[3rem] flex flex-col md:flex-row items-center overflow-hidden reveal" style="transition-delay: 300ms;">
+                        <div class="p-12 md:w-1/2">
+                            <h3 class="text-brand-dark text-3xl font-black mb-6 tracking-tight">Strategic Partnership</h3>
+                            <p class="text-on-surface-variant text-lg leading-relaxed mb-8 font-medium">We don't just supply; we consult on quality protocols to elevate your own internal standards.</p>
+                        </div>
+                        <div class="h-full w-full md:w-1/2 relative group">
+                            <img src="img/long.jpg" alt="Strategic Partnership" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark w-full pt-24 pb-12 border-t border-white/10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-16 max-w-[1440px] mx-auto px-8 mb-20">
+            <div class="md:col-span-4">
+                <div class="h-10 mb-10">
+                    <img src="img/logo.png" alt="Bluesun Logo" class="h-full object-contain brightness-0 invert">
+                </div>
+                <p class="text-white/40 text-base font-light leading-relaxed mb-10 max-w-sm">Setting the benchmark in industrial logistics and precision engineering since 2012.</p>
+                <div class="flex gap-5">
+                    <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-blue hover:border-brand-blue transition-all duration-500 group">
+                        <span class="material-symbols-outlined text-white group-hover:scale-110 transition-transform">public</span>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-blue hover:border-brand-blue transition-all duration-500 group">
+                        <span class="material-symbols-outlined text-white group-hover:scale-110 transition-transform">language</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 md:col-start-7">
+                <h5 class="text-brand-blue font-bold mb-8 uppercase tracking-[0.2em] text-[11px]">Company</h5>
+                <ul class="space-y-5">
+                    <li><a href="index.html" class="text-white/40 hover:text-white transition-all text-sm font-medium tracking-wide">Home</a></li>
+                    <li><a href="profile.html" class="text-white/40 hover:text-white transition-all text-sm font-medium tracking-wide">Profile</a></li>
+                    <li><a href="careers.html"
+                            class="text-white/40 hover:text-white transition-all text-sm font-medium tracking-wide">Career</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-2">
+                <h5 class="text-brand-blue font-bold mb-8 uppercase tracking-[0.2em] text-[11px]">Engineering</h5>
+                <ul class="space-y-5">
+                    <li><a href="services.html" class="text-white/40 hover:text-white transition-all text-sm font-medium tracking-wide">Services</a></li>
+                    <li><a href="quality.html" class="text-white/40 hover:text-white transition-all text-sm font-medium tracking-wide">Quality</a></li>
+                    <li><a href="index.html#contact" class="text-white/40 hover:text-white transition-all text-sm font-medium tracking-wide">Technical Specs</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-2">
+                <h5 class="text-brand-blue font-bold mb-8 uppercase tracking-[0.2em] text-[11px]">Legal</h5>
+                <ul class="space-y-5">
+                    <li><a href="privacy.html" class="text-white/40 hover:text-white transition-all text-sm font-medium tracking-wide">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="text-white/40 hover:text-white transition-all text-sm font-medium tracking-wide">Terms and Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-[1440px] mx-auto px-8 pt-10 border-t border-white/5 flex justify-center items-center">
+            <p class="text-white/30 text-[11px] font-bold tracking-[0.25em] uppercase text-center w-full">© 2026 ALL RIGHTS RESERVED BY BLUESUN INTERNATIONAL LLC</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Intersection Observer for Reveal animations
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluesun International | Kinetic Precision Logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "brand-blue": "#0073CF",
+                        "brand-blue-light": "#6eb5ff",
+                        "brand-dark": "#0A1118",
+                        // keeping original colors
+                        "primary": "#000f22",
+                        "surface": "#f8fafc",
+                        "surface-container": "#f1f5f9",
+                        "surface-container-low": "#f8fafc",
+                        "surface-container-high": "#e2e8f0",
+                        "on-surface": "#0f172a",
+                        "on-surface-variant": "#475569",
+                        "primary-fixed-dim": "#b0c8eb",
+                        "secondary-container": "#0073CF",
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    boxShadow: {
+                        'luxury': '0 20px 40px -15px rgba(0,0,0,0.05)',
+                        'blue': '0 4px 20px -2px rgba(0, 115, 207, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-surface font-body text-on-surface antialiased overflow-x-hidden">
+
+    <!-- Top Bar -->
+    <div class="bg-brand-dark text-white/80 py-2 border-b border-white/10 hidden md:block relative z-50">
+        <div class="max-w-[1440px] mx-auto px-8 flex justify-between items-center text-xs font-medium">
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-2 group hover:text-white transition-colors cursor-pointer">
+                    <span
+                        class="material-symbols-outlined text-[16px] text-brand-blue group-hover:scale-110 transition-transform">call</span>
+                    <span class="tracking-wide">+968 22584259</span>
+                </div>
+                <div class="flex items-center gap-2 group hover:text-white transition-colors cursor-pointer">
+                    <span
+                        class="material-symbols-outlined text-[16px] text-brand-blue group-hover:scale-110 transition-transform">mail</span>
+                    <span class="tracking-wide">sales@bluesun-om.com</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-brand-blue font-bold">
+                <span class="material-symbols-outlined text-[16px]">verified</span>
+                <span>An ISO 9001 : 2005 Certified Company</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav id="main-nav"
+        class="sticky top-0 w-full z-40 bg-white/70 backdrop-blur-2xl border-b border-surface-container transition-all duration-500">
+        <div class="flex justify-between items-center max-w-[1440px] mx-auto px-8 py-5 lg:py-6">
+            <!-- Logo -->
+            <div class="h-10 lg:h-12 relative z-50">
+                <img src="img/logo.png" alt="Bluesun International Logo" class="h-full object-contain">
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="index.html"
+                    class="text-brand-dark font-bold font-headline text-[13px] uppercase tracking-widest border-b-2 border-brand-blue pb-1 transition-all">Home</a>
+                <a href="profile.html"
+                    class="text-on-surface-variant hover:text-brand-dark font-medium font-headline text-[13px] uppercase tracking-widest border-b-2 border-transparent hover:border-brand-blue/50 pb-1 transition-all">Profile</a>
+                <a href="divisions.html"
+                    class="text-on-surface-variant hover:text-brand-dark font-medium font-headline text-[13px] uppercase tracking-widest border-b-2 border-transparent hover:border-brand-blue/50 pb-1 transition-all">Divisions</a>
+                <a href="services.html"
+                    class="text-on-surface-variant hover:text-brand-dark font-medium font-headline text-[13px] uppercase tracking-widest border-b-2 border-transparent hover:border-brand-blue/50 pb-1 transition-all">Services</a>
+                <a href="quality.html"
+                    class="text-on-surface-variant hover:text-brand-dark font-medium font-headline text-[13px] uppercase tracking-widest border-b-2 border-transparent hover:border-brand-blue/50 pb-1 transition-all">Quality</a>
+                <a href="careers.html"
+                    class="text-on-surface-variant hover:text-brand-dark font-medium font-headline text-[13px] uppercase tracking-widest border-b-2 border-transparent hover:border-brand-blue/50 pb-1 transition-all">Career</a>
+            </div>
+
+            <!-- Action Area -->
+            <div class="flex items-center gap-6">
+                <a href="#contact"
+                    class="hidden lg:flex bg-brand-dark text-white px-8 py-3.5 text-xs font-bold font-headline tracking-[0.15em] uppercase transition-all duration-300 hover:bg-brand-blue hover:shadow-blue hover:-translate-y-0.5 border border-transparent">
+                    Enquiry Us
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-brand-dark focus:outline-none">
+                    <span class="material-symbols-outlined text-3xl">menu_open</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 z-30 bg-white pt-32 px-8">
+        <div class="flex flex-col space-y-6">
+            <a href="index.html"
+                class="text-2xl font-serif italic text-brand-blue border-b border-surface-container pb-4">Home</a>
+            <a href="profile.html"
+                class="text-2xl font-headline font-light text-on-surface border-b border-surface-container pb-4">Profile</a>
+            <a href="divisions.html"
+                class="text-2xl font-headline font-light text-on-surface border-b border-surface-container pb-4">Divisions</a>
+            <a href="services.html"
+                class="text-2xl font-headline font-light text-on-surface border-b border-surface-container pb-4">Services</a>
+            <a href="quality.html"
+                class="text-2xl font-headline font-light text-on-surface border-b border-surface-container pb-4">Quality</a>
+            <a href="careers.html"
+                class="text-2xl font-headline font-light text-on-surface border-b border-surface-container pb-4">Career</a>
+            <a href="#contact"
+                class="w-full text-center block bg-brand-dark text-white py-4 mt-8 font-headline tracking-widest uppercase text-sm">
+                Enquiry Us
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <!-- Hero Slider Section -->
+    <header class="relative h-[90vh] min-h-[600px] overflow-hidden bg-brand-dark">
+        <!-- Slide 1: Lifting & Fluid Tech -->
+        <div class="hero-slide active absolute inset-0 flex items-center transition-opacity duration-1000 ease-in-out">
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-60">
+                    <source src="img/v1.mp4" type="video/mp4">
+                </video>
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-brand-dark/30"></div>
+            </div>
+            <div class="relative z-10 max-w-[1440px] mx-auto px-8 w-full mt-24 md:mt-32">
+                <div class="max-w-4xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-[1px] w-12 bg-brand-blue"></div>
+                        <span class="text-brand-blue text-[11px] font-bold tracking-[0.3em] uppercase">Industry
+                            Leaders</span>
+                    </div>
+                    <h1
+                        class="text-white text-5xl md:text-7xl lg:text-[5.5rem] font-black font-headline leading-[0.95] tracking-tighter mb-8 slide-title">
+                        Blue<span class="text-brand-blue">sun</span> <br>
+                        <span class="font-serif font-light text-6xl md:text-8xl lg:text-[6.5rem]">International
+                            LLC</span>
+                    </h1>
+                    <p
+                        class="text-white/80 text-xl md:text-2xl font-light leading-relaxed mb-10 max-w-3xl border-l border-brand-blue/30 pl-6 slide-desc">
+                        Your Trusted Partner in Lifting & Fluid Technology.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Oil and Gas -->
+        <div
+            class="hero-slide absolute inset-0 flex items-center opacity-0 transition-opacity duration-1000 ease-in-out">
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-60">
+                    <source src="img/oil.mp4" type="video/mp4">
+                </video>
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-brand-dark/30"></div>
+            </div>
+            <div class="relative z-10 max-w-[1440px] mx-auto px-8 w-full mt-24 md:mt-32">
+                <div class="max-w-4xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-[1px] w-12 bg-brand-blue"></div>
+                        <span class="text-brand-blue text-[11px] font-bold tracking-[0.3em] uppercase">Energy
+                            Partner</span>
+                    </div>
+                    <h1
+                        class="text-white text-5xl md:text-7xl lg:text-[5.5rem] font-black font-headline leading-[0.95] tracking-tighter mb-8 slide-title">
+                        Blue<span class="text-brand-blue">sun</span> <br>
+                        <span class="font-serif font-light text-6xl md:text-8xl lg:text-[6.5rem]">International
+                            LLC</span>
+                    </h1>
+                    <p
+                        class="text-white/80 text-xl md:text-2xl font-light leading-relaxed mb-10 max-w-3xl border-l border-brand-blue/30 pl-6 slide-desc">
+                        Solution for Oil and Gas Sector.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Ship Building -->
+        <div
+            class="hero-slide absolute inset-0 flex items-center opacity-0 transition-opacity duration-1000 ease-in-out">
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-60">
+                    <source src="img/shh.mp4" type="video/mp4">
+                </video>
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-brand-dark/30"></div>
+            </div>
+            <div class="relative z-10 max-w-[1440px] mx-auto px-8 w-full mt-24 md:mt-32">
+                <div class="max-w-4xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-[1px] w-12 bg-brand-blue"></div>
+                        <span class="text-brand-blue text-[11px] font-bold tracking-[0.3em] uppercase">Maritime
+                            Excellence</span>
+                    </div>
+                    <h1
+                        class="text-white text-5xl md:text-7xl lg:text-[5.5rem] font-black font-headline leading-[0.95] tracking-tighter mb-8 slide-title">
+                        Blue<span class="text-brand-blue">sun</span> <br>
+                        <span class="font-serif font-light text-6xl md:text-8xl lg:text-[6.5rem]">International
+                            LLC</span>
+                    </h1>
+                    <p
+                        class="text-white/80 text-xl md:text-2xl font-light leading-relaxed mb-10 max-w-3xl border-l border-brand-blue/30 pl-6 slide-desc">
+                        Solution for Ship Building.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Navigation Dots -->
+        <div class="absolute bottom-12 left-8 z-20 flex gap-4">
+            <button class="slider-dot w-12 h-1 bg-white/20 hover:bg-brand-blue/50 transition-all duration-300 active"
+                data-index="0"></button>
+            <button class="slider-dot w-12 h-1 bg-white/20 hover:bg-brand-blue/50 transition-all duration-300"
+                data-index="1"></button>
+            <button class="slider-dot w-12 h-1 bg-white/20 hover:bg-brand-blue/50 transition-all duration-300"
+                data-index="2"></button>
+        </div>
+    </header>
+
+    <!-- Stats Counter -->
+    <section
+        class="bg-surface py-16 border-b border-surface-container relative z-10 -mt-10 mx-8 max-w-[1440px] xl:mx-auto bg-white shadow-luxury">
+        <div class="px-10 lg:px-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 divide-x divide-surface-container" id="stats-section">
+                <div class="space-y-2 text-center md:text-left md:pl-0">
+                    <h3 class="text-4xl md:text-5xl font-light font-serif text-brand-dark tracking-tight"><span
+                            class="stat-counter" data-target="5">0</span></h3>
+                    <p class="text-on-surface-variant font-bold text-[10px] tracking-[0.2em] uppercase">Tenders
+                        Completed</p>
+                </div>
+                <div class="space-y-2 text-center md:text-left pl-6 md:pl-12">
+                    <h3 class="text-4xl md:text-5xl font-light font-serif text-brand-dark tracking-tight"><span
+                            class="stat-counter" data-target="2">0</span></h3>
+                    <p class="text-on-surface-variant font-bold text-[10px] tracking-[0.2em] uppercase">Ongoing Tenders
+                    </p>
+                </div>
+                <div class="space-y-2 text-center md:text-left pl-6 md:pl-12">
+                    <h3 class="text-4xl md:text-5xl font-light font-serif text-brand-dark tracking-tight"><span
+                            class="stat-counter" data-target="9">0</span><span
+                            class="text-brand-blue font-sans font-bold">+</span></h3>
+                    <p class="text-on-surface-variant font-bold text-[10px] tracking-[0.2em] uppercase">Years of
+                        Experience</p>
+                </div>
+                <div class="space-y-2 text-center md:text-left pl-6 md:pl-12">
+                    <h3 class="text-4xl md:text-5xl font-light font-serif text-brand-dark tracking-tight"><span
+                            class="stat-counter" data-target="120">0</span><span
+                            class="text-brand-blue font-sans font-bold">+</span></h3>
+                    <p class="text-on-surface-variant font-bold text-[10px] tracking-[0.2em] uppercase">Happy Customers
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="bg-white py-24 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div
+            class="absolute top-10 left-1/4 w-32 h-32 border-2 border-brand-blue/10 rounded-full animate-[ping_3s_ease-in-out_infinite] pointer-events-none">
+        </div>
+        <div
+            class="absolute -right-20 top-1/2 w-64 h-64 border-[1px] border-surface-container-high rounded-full animate-[spin_20s_linear_infinite] flex items-center justify-center pointer-events-none">
+            <div
+                class="w-32 h-32 border-[1px] border-brand-blue/20 rounded-full border-dashed animate-[spin_10s_linear_infinite_reverse]">
+            </div>
+        </div>
+        <div class="max-w-[1440px] mx-auto px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Image Collage -->
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <div class="aspect-[4/5] overflow-hidden shadow-luxury">
+                                <img src="img/about_factory.jpg" alt="Industrial Factory Operations"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-12">
+                            <div class="aspect-[4/5] overflow-hidden shadow-luxury">
+                                <img src="img/ship_building.png" alt="Fluid Technology Pipes"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Middle East Badge -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                        <div
+                            class="w-24 h-24 rounded-full bg-brand-blue flex items-center justify-center shadow-xl border-4 border-white text-center">
+                            <span class="material-symbols-outlined text-white text-5xl"
+                                style="font-variation-settings: 'FILL' 1;">public</span>
+                        </div>
+                    </div>
+                    <!-- Decorative Dots -->
+                    <div class="absolute -bottom-6 -left-6 grid grid-cols-6 gap-2 opacity-20">
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                        <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <span
+                            class="bg-brand-blue/10 text-brand-blue text-[11px] font-bold tracking-[0.2em] uppercase px-5 py-2 rounded-full">About
+                            Us</span>
+                    </div>
+                    <h2
+                        class="text-4xl md:text-5xl font-black font-headline text-brand-dark tracking-tighter leading-[1.1] mb-8">
+                        Blue<span class="text-brand-blue">sun</span> <span class="font-serif font-light">International
+                            LLC</span>
+                    </h2>
+                    <p class="text-on-surface-variant text-base leading-relaxed mb-8">
+                        We are an oil field supply company that offers the oil and gas sector a diverse variety of
+                        engineering products and services. We are experts and stockiest in the Shipbuilding, Oil and
+                        Gas, and Construction industries in the Middle East. We attempt to provide consistently improved
+                        solutions to our clients and end users through a team of professionals that work directly with
+                        manufacturers. Our consumers continue to have faith in us because of our commitment, integrity,
+                        and most importantly, the caliber of our products.
+                    </p>
+
+                    <!-- Feature Checklist -->
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-4 mb-10">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-brand-blue text-lg"
+                                style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            <span class="text-brand-dark font-bold text-sm">Oil & Gas Expertise</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-brand-blue text-lg"
+                                style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            <span class="text-brand-dark font-bold text-sm">Ship Building Solutions</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-brand-blue text-lg"
+                                style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            <span class="text-brand-dark font-bold text-sm">Construction Industry</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-brand-blue text-lg"
+                                style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            <span class="text-brand-dark font-bold text-sm">24/7 Customer Support</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <a href="#contact"
+                        class="inline-flex items-center gap-3 bg-brand-blue text-white px-8 py-4 text-xs font-bold font-headline tracking-[0.15em] uppercase transition-all duration-300 hover:bg-brand-dark hover:shadow-blue hover:-translate-y-0.5 group">
+                        Get In Touch
+                        <span
+                            class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Carousel -->
+    <section class="bg-surface py-24 relative overflow-hidden">
+        <!-- Animated Elements -->
+        <div
+            class="absolute top-0 right-0 w-1/3 h-full bg-brand-blue/5 -skew-x-12 transform origin-top-right animate-[pulse_6s_ease-in-out_infinite_alternate] pointer-events-none">
+        </div>
+        <div
+            class="absolute top-20 left-10 w-96 h-[1px] bg-gradient-to-r from-brand-blue/50 to-transparent animate-[pulse_2s_ease-in-out_infinite] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-10 right-1/4 w-32 h-32 border border-brand-blue/20 rounded-full animate-[pulse_4s_ease-in-out_infinite] flex items-center justify-center pointer-events-none">
+            <div class="w-16 h-16 border border-brand-blue/10 rounded-full animate-[ping_3s_infinite]"></div>
+        </div>
+        <div
+            class="max-w-[1440px] mx-auto px-8 mb-16 flex flex-col md:flex-row justify-between items-end gap-6 relative z-10">
+            <div class="max-w-2xl">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="text-brand-blue font-bold tracking-[0.3em] uppercase text-[10px]">Our Strengths</span>
+                    <div class="h-[1px] w-8 bg-brand-blue/50"></div>
+                </div>
+                <h2
+                    class="text-4xl md:text-5xl font-black font-headline text-brand-dark tracking-tighter leading-[1.1]">
+                    Why <span class="font-serif italic font-light text-brand-blue">Choose Us.</span>
+                </h2>
+            </div>
+        </div>
+
+        <div id="services-carousel"
+            class="flex overflow-x-auto gap-8 px-8 pb-12 no-scrollbar scroll-smooth relative z-10 max-w-[1440px] mx-auto">
+            <!-- Card 1 -->
+            <div
+                class="min-w-[340px] md:min-w-[420px] group relative overflow-hidden aspect-[4/5] bg-brand-dark cursor-pointer shadow-luxury">
+                <img src="img/quality.jpg" alt="Superior Quality"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-1000 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+
+                <div
+                    class="absolute top-8 right-8 w-12 h-12 border border-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-brand-blue group-hover:border-transparent transition-all duration-500">
+                    <span class="material-symbols-outlined text-white">verified</span>
+                </div>
+
+                <div
+                    class="absolute bottom-0 left-0 p-10 w-full transform group-hover:-translate-y-2 transition-transform duration-500">
+                    <h3 class="text-white text-3xl font-light font-serif mb-3">Superior Quality</h3>
+                    <p class="text-white/70 text-sm mb-4 font-light leading-relaxed max-w-[90%]">Our endeavor to provide
+                        premium quality is a never-ending process and we make every possible effort to exceed the set in
+                        quality.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="min-w-[340px] md:min-w-[420px] group relative overflow-hidden aspect-[4/5] bg-brand-dark cursor-pointer shadow-luxury">
+                <img src="img/team.jpg" alt="Team"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-1000 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+
+                <div
+                    class="absolute top-8 right-8 w-12 h-12 border border-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-brand-blue group-hover:border-transparent transition-all duration-500">
+                    <span class="material-symbols-outlined text-white">groups</span>
+                </div>
+
+                <div
+                    class="absolute bottom-0 left-0 p-10 w-full transform group-hover:-translate-y-2 transition-transform duration-500">
+                    <h3 class="text-white text-3xl font-light font-serif mb-3">Team</h3>
+                    <p class="text-white/70 text-sm mb-4 font-light leading-relaxed max-w-[90%]">Our team is always keen
+                        to develop and design the best solution for our customers with cost effectiveness and quality.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="min-w-[340px] md:min-w-[420px] group relative overflow-hidden aspect-[4/5] bg-brand-dark cursor-pointer shadow-luxury">
+                <img src="img/support.png" alt="Customer support"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-1000 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+
+                <div
+                    class="absolute top-8 right-8 w-12 h-12 border border-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-brand-blue group-hover:border-transparent transition-all duration-500">
+                    <span class="material-symbols-outlined text-white">headset_mic</span>
+                </div>
+
+                <div
+                    class="absolute bottom-0 left-0 p-10 w-full transform group-hover:-translate-y-2 transition-transform duration-500">
+                    <h3 class="text-white text-3xl font-light font-serif mb-3">Customer support</h3>
+                    <p class="text-white/70 text-sm mb-4 font-light leading-relaxed max-w-[90%]">By modernization and by
+                        introduction of new products we keep our pace to cater the requirements of our customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Control Section -->
+    <section class="bg-[#f0f9ff] pt-6 pb-24 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute top-10 left-10 w-64 h-64 bg-brand-blue/10 rounded-full blur-3xl animate-pulse"></div>
+        <div
+            class="absolute bottom-10 right-20 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl animate-[pulse_4s_ease-in-out_infinite_alternate]">
+        </div>
+        <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full border-[1px] border-brand-blue/5 rounded-full animate-[spin_60s_linear_infinite]">
+        </div>
+
+        <div class="max-w-[1440px] mx-auto px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                <!-- Left: Content -->
+                <div class="space-y-8 pr-0 lg:pr-10">
+                    <div>
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="text-brand-blue font-bold tracking-[0.3em] uppercase text-[10px]">Our
+                                Standards</span>
+                            <div class="h-[1px] w-8 bg-brand-blue/50"></div>
+                        </div>
+                        <h2
+                            class="text-4xl md:text-5xl font-black font-headline text-brand-dark tracking-tighter leading-[1.1]">
+                            Quality <span class="font-serif italic font-light text-brand-blue">Control.</span>
+                        </h2>
+                    </div>
+                    <p class="text-on-surface-variant text-[15px] font-light leading-relaxed">
+                        <strong class="font-bold text-brand-dark">Bluesun International LLC</strong> are committed for
+                        continuous improvement in Customer Satisfaction through an effective Quality Management System.
+                        Our well-developed quality checking unit assists us in undertaking quality checking at each
+                        stage of process. We delivering products after thoroughly checking the quality.
+                    </p>
+                    <p class="text-on-surface-variant text-[15px] font-light leading-relaxed">
+                        We are committed to meet customers' needs and expectations by delivering competitive services
+                        and solutions through continual improvement of our systems. In order to attain a better position
+                        in the market, the facility is upgraded on a highly regular basis.
+                    </p>
+                    <p class="text-on-surface-variant text-[15px] font-light leading-relaxed">
+                        Being a leader in innovation, Bluesun International LLC always provides unique and tailored
+                        solutions to meet the ever changing demands of the market.
+                    </p>
+                </div>
+
+                <!-- Right: Image Collage (2 Images) -->
+                <div class="relative h-[600px] w-full flex items-center">
+                    <!-- Main Large Image -->
+                    <div
+                        class="absolute top-4 right-0 w-[85%] h-[480px] z-10 rounded-2xl overflow-hidden shadow-luxury">
+                        <img src="img/qc_new_ship.jpg" alt="Port Crane"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+
+                    <!-- Overlapping Image -->
+                    <div
+                        class="absolute bottom-4 left-0 w-[55%] h-[380px] z-20 rounded-2xl overflow-hidden border-[12px] border-[#f0f9ff] shadow-2xl transform hover:-translate-y-2 transition-transform duration-500">
+                        <img src="img/qc_ship.jpg" alt="Container Ship" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-24 bg-surface relative">
+        <div class="absolute top-0 left-0 w-full h-1/2 bg-brand-dark"></div>
+        <div class="max-w-[1200px] mx-auto px-8 relative z-10">
+            <div class="bg-white flex flex-col lg:flex-row shadow-luxury border border-surface-container/50">
+                <div class="lg:w-2/5 p-12 lg:p-16 bg-brand-dark text-white relative overflow-hidden">
+                    <div class="absolute bottom-0 right-0 w-64 h-64 bg-brand-blue/10 rounded-tl-full blur-3xl"></div>
+                    <div class="relative z-10">
+                        <h2 class="text-3xl lg:text-4xl font-serif font-light tracking-tight mb-6 leading-tight">Get in
+                            <span class="font-bold italic text-brand-blue">Touch.</span>
+                        </h2>
+                        <p class="text-white/60 text-sm font-light leading-relaxed mb-12">Connect with Bluesun
+                            International LLC, We make sure that our Customers are provided with the most trusted
+                            Products in the field.</p>
+
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-5">
+                                <span class="material-symbols-outlined text-brand-blue font-light">location_on</span>
+                                <div>
+                                    <h6 class="font-bold text-xs uppercase tracking-[0.2em] mb-2">Global Headquarters
+                                    </h6>
+                                    <p class="text-white/50 text-xs font-light leading-relaxed">Ghala, 250 Way no. 5001,
+                                        112</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-5">
+                                <span class="material-symbols-outlined text-brand-blue font-light">call</span>
+                                <div>
+                                    <h6 class="font-bold text-xs uppercase tracking-[0.2em] mb-2">Direct Line</h6>
+                                    <p class="text-white/50 text-xs font-light">+968 22584259</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-5">
+                                <span class="material-symbols-outlined text-brand-blue font-light">mail</span>
+                                <div>
+                                    <h6 class="font-bold text-xs uppercase tracking-[0.2em] mb-2">Email</h6>
+                                    <p class="text-white/50 text-xs font-light">sales@bluesun-om.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-3/5 p-12 lg:p-16 bg-surface">
+                    <form class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-dark">Full
+                                    Name</label>
+                                <input type="text"
+                                    class="w-full bg-transparent border-0 border-b border-surface-container-high px-0 py-3 focus:ring-0 focus:border-brand-blue text-sm font-light transition-colors"
+                                    placeholder="John Doe">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-dark">Email
+                                    Address</label>
+                                <input type="email"
+                                    class="w-full bg-transparent border-0 border-b border-surface-container-high px-0 py-3 focus:ring-0 focus:border-brand-blue text-sm font-light transition-colors"
+                                    placeholder="john@company.com">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-dark">Company
+                                Name</label>
+                            <input type="text"
+                                class="w-full bg-transparent border-0 border-b border-surface-container-high px-0 py-3 focus:ring-0 focus:border-brand-blue text-sm font-light transition-colors"
+                                placeholder="Your Organization">
+                        </div>
+                        <div class="space-y-2">
+                            <label
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-dark">Message</label>
+                            <textarea rows="4"
+                                class="w-full bg-transparent border-0 border-b border-surface-container-high px-0 py-3 focus:ring-0 focus:border-brand-blue text-sm font-light transition-colors resize-none"
+                                placeholder="How can we assist you?"></textarea>
+                        </div>
+                        <button
+                            class="bg-brand-dark text-white px-10 py-4 font-bold font-headline tracking-[0.2em] uppercase text-xs transition-all duration-300 hover:bg-brand-blue hover:shadow-blue mt-4">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark w-full pt-20 pb-10 border-t border-white/10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 max-w-[1440px] mx-auto px-8 mb-16">
+            <div class="md:col-span-4">
+                <div class="h-10 mb-8">
+                    <img src="img/logo.png" alt="Bluesun Logo" class="h-full object-contain brightness-0 invert">
+                </div>
+                <p class="text-white/50 text-sm font-light leading-relaxed mb-8 max-w-sm">Providing consistently
+                    improved solutions, diverse engineering products, and reliable services to the Shipbuilding, Oil &
+                    Gas, and Construction industries across the Middle East.</p>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-blue hover:border-brand-blue transition-all duration-300 group">
+                        <svg class="w-4 h-4 fill-white group-hover:fill-white" viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-blue hover:border-brand-blue transition-all duration-300 group">
+                        <svg class="w-4 h-4 fill-white group-hover:fill-white" viewBox="0 0 24 24">
+                            <path
+                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.054 10.054 0 01-3.127 1.184 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-blue hover:border-brand-blue transition-all duration-300 group">
+                        <svg class="w-4 h-4 fill-white group-hover:fill-white" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-blue hover:border-brand-blue transition-all duration-300 group">
+                        <span class="material-symbols-outlined text-[18px] text-white">mail</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 md:col-start-6">
+                <h5 class="text-brand-blue font-bold mb-6 uppercase tracking-[0.2em] text-[10px]">Navigation</h5>
+                <ul class="space-y-4">
+                    <li><a href="index.html"
+                            class="text-white/60 hover:text-white transition-all text-[13px] font-light tracking-wide">Home</a>
+                    </li>
+                    <li><a href="profile.html"
+                            class="text-white/60 hover:text-white transition-all text-[13px] font-light tracking-wide">Profile</a>
+                    </li>
+                    <li><a href="divisions.html"
+                            class="text-white/60 hover:text-white transition-all text-[13px] font-light tracking-wide">Divisions</a>
+                    </li>
+                    <li><a href="services.html"
+                            class="text-white/60 hover:text-white transition-all text-[13px] font-light tracking-wide">Services</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-2">
+                <h5 class="text-brand-blue font-bold mb-6 uppercase tracking-[0.2em] text-[10px]">Company</h5>
+                <ul class="space-y-4">
+                    <li><a href="quality.html"
+                            class="text-white/60 hover:text-white transition-all text-[13px] font-light tracking-wide">Quality</a>
+                    </li>
+                    <li><a href="careers.html"
+                            class="text-white/60 hover:text-white transition-all text-[13px] font-light tracking-wide">Career</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="text-white/60 hover:text-white transition-all text-[13px] font-light tracking-wide">Contact
+                            Us</a></li>
+
+                </ul>
+            </div>
+
+            <div class="md:col-span-2">
+                <h5 class="text-brand-blue font-bold mb-6 uppercase tracking-[0.2em] text-[10px]">Legal</h5>
+                <ul class="space-y-4">
+                    <li><a href="privacy.html"
+                            class="text-white/60 hover:text-white transition-all text-[13px] font-light tracking-wide">Privacy
+                            Policy</a></li>
+                    <li><a href="terms.html"
+                            class="text-white/60 hover:text-white transition-all text-[13px] font-light tracking-wide">Terms and Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-[1440px] mx-auto px-8 pt-8 border-t border-white/10 flex justify-center items-center">
+            <p class="text-white/40 text-[10px] font-bold tracking-[0.2em] uppercase text-center w-full">© 2026 ALL
+                RIGHTS RESERVED BY BLUESUN INTERNATIONAL LLC</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
