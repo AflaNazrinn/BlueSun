@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="margin: 0 !important; padding: 0 !important;">
 
 <head>
     <meta charset="UTF-8">
@@ -65,8 +65,18 @@
         }
 
         .editorial-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .editorial-grid {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                gap: 4rem;
+                align-items: center;
+            }
         }
 
         #apply-modal.hidden {
@@ -75,7 +85,7 @@
     </style>
 </head>
 
-<body class="bg-white font-body text-on-surface antialiased">
+<body class="bg-white font-body text-on-surface antialiased" style="margin: 0 !important; padding: 0 !important;">
     <!-- Top Bar -->
     <div class="bg-brand-dark text-white/70 py-2.5 px-8 hidden md:block border-b border-white/5 relative z-[60]">
         <div class="max-w-[1440px] mx-auto flex justify-between items-center text-[11px] font-bold tracking-[0.15em] uppercase">
@@ -137,7 +147,7 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="relative h-[85vh] flex items-center overflow-hidden bg-brand-dark">
+        <section class="relative h-[60vh] md:h-[85vh] flex items-center overflow-hidden bg-brand-dark">
             <div class="absolute inset-0 z-0">
                 <img src="img/career_hero.png" alt="Bluesun Careers" class="w-full h-full object-cover opacity-40 hero-zoom">
                 <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/60 to-transparent"></div>
@@ -165,25 +175,25 @@
         </section>
 
         <!-- Why Work With Us -->
-        <section class="py-32 bg-white overflow-hidden">
+        <section class="py-20 md:py-32 bg-white overflow-hidden">
             <div class="max-w-[1440px] mx-auto px-8">
-                <div class="editorial-grid gap-16 items-center">
-                    <div class="col-span-12 lg:col-span-5 reveal">
-                        <h2 class="font-headline text-5xl font-black text-brand-dark leading-tight tracking-tighter mb-8">Architecting <br/><span class="text-brand-blue">Industrial</span> Resilience</h2>
+                <div class="editorial-grid">
+                    <div class="lg:col-span-5 reveal">
+                        <h2 class="font-headline text-4xl md:text-5xl font-black text-brand-dark leading-tight tracking-tighter mb-4 md:mb-8">Architecting <br/><span class="text-brand-blue">Industrial</span> Resilience</h2>
                         <p class="text-on-surface-variant text-xl leading-relaxed mb-10">
                             Bluesun International LLC stands as a titan in industrial logistics. Our commitment to quality isn't just a policy—it's the structural anchor of everything we build. We empower our teams to pioneer technical sophistication.
                         </p>
                     </div>
-                    <div class="col-span-12 lg:col-span-7 grid grid-cols-2 gap-6 h-[550px] reveal">
-                        <div class="bg-surface-container rounded-3xl overflow-hidden group">
+                    <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 h-auto md:h-[550px] reveal">
+                        <div class="bg-surface-container rounded-3xl overflow-hidden group h-[200px] md:h-full">
                             <img src="img/team.jpg" alt="Engineering" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
                         </div>
-                        <div class="grid grid-rows-2 gap-6">
-                            <div class="bg-brand-blue-light/10 rounded-3xl flex flex-col items-center justify-center p-12 text-center group hover:bg-brand-blue transition-all duration-500">
-                                <span class="material-symbols-outlined text-6xl text-brand-blue mb-4 group-hover:text-white transition-colors">precision_manufacturing</span>
-                                <div class="font-headline font-black text-xl text-brand-dark group-hover:text-white uppercase tracking-tighter">Technical Mastery</div>
+                        <div class="grid grid-cols-2 md:grid-cols-1 gap-6">
+                            <div class="bg-brand-blue-light/10 rounded-3xl flex flex-col items-center justify-center p-6 text-center group hover:bg-brand-blue transition-all duration-500 h-[150px] md:h-full">
+                                <span class="material-symbols-outlined text-3xl text-brand-blue mb-2 group-hover:text-white transition-colors">precision_manufacturing</span>
+                                <div class="font-headline font-black text-xs md:text-lg text-brand-dark group-hover:text-white uppercase tracking-tighter">Industrial Mastery</div>
                             </div>
-                            <div class="bg-surface-container rounded-3xl overflow-hidden group">
+                            <div class="bg-surface-container rounded-3xl overflow-hidden group h-[150px] md:h-full">
                                 <img src="img/cca.jpg" alt="Team" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
                             </div>
                         </div>
@@ -193,7 +203,7 @@
         </section>
 
         <!-- Core Principles -->
-        <section class="py-32 bg-surface relative overflow-hidden">
+        <section class="py-20 md:py-32 bg-surface relative overflow-hidden">
             <div class="max-w-[1440px] mx-auto px-8 relative z-10">
                 <div class="text-center max-w-2xl mx-auto mb-20 reveal">
                     <span class="text-brand-blue font-bold text-[11px] tracking-[0.4em] uppercase mb-4 block">Core Principles</span>
@@ -229,7 +239,7 @@
         </section>
 
         <!-- Current Openings -->
-        <section id="openings" class="py-32 px-8 max-w-[1440px] mx-auto">
+        <section id="openings" class="py-20 md:py-32 px-8 max-w-[1440px] mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal">
                 <div>
                     <h2 class="text-5xl font-black font-headline uppercase tracking-tighter">Current Openings</h2>
@@ -237,7 +247,6 @@
                 </div>
                 <div class="flex gap-4">
                     <span class="px-6 py-3 bg-brand-dark text-white rounded-full text-xs font-bold uppercase tracking-widest">All Roles</span>
-                    <span class="px-6 py-3 bg-white border border-surface-container-high rounded-full text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:border-brand-blue transition-colors cursor-pointer">Technical</span>
                 </div>
             </div>
 
@@ -302,14 +311,14 @@
         </section>
 
         <!-- Apply Modal -->
-        <div id="apply-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-6 bg-brand-dark/90 backdrop-blur-md">
-            <div class="bg-white w-full max-w-2xl rounded-[3rem] overflow-hidden shadow-luxury relative animate-fade-in-up">
-                <button onclick="closeApplyModal()" class="absolute top-8 right-8 text-brand-dark hover:text-brand-blue transition-colors">
-                    <span class="material-symbols-outlined text-3xl">close</span>
+        <div id="apply-modal" class="hidden fixed inset-0 z-[100] flex items-start md:items-center justify-center p-4 md:p-6 bg-brand-dark/90 backdrop-blur-md overflow-y-auto">
+            <div class="bg-white w-full max-w-2xl rounded-3xl md:rounded-[3rem] overflow-hidden shadow-luxury relative animate-fade-in-up my-8">
+                <button onclick="closeApplyModal()" class="absolute top-4 right-4 md:top-8 md:right-8 w-10 h-10 md:w-auto md:h-auto flex items-center justify-center rounded-full bg-surface md:bg-transparent text-brand-dark hover:text-brand-blue transition-colors z-50">
+                    <span class="material-symbols-outlined text-2xl md:text-3xl">close</span>
                 </button>
-                <div class="p-10 md:p-16">
-                    <h2 class="font-headline text-4xl font-black text-brand-dark mb-2 tracking-tighter">Apply for Position</h2>
-                    <p id="modal-job-title" class="text-brand-blue font-bold uppercase tracking-widest text-sm mb-10"></p>
+                <div class="p-8 md:p-16">
+                    <h2 class="font-headline text-3xl md:text-4xl font-black text-brand-dark mb-2 tracking-tighter">Apply Now</h2>
+                    <p id="modal-job-title" class="text-brand-blue font-bold uppercase tracking-widest text-[10px] md:text-sm mb-6 md:mb-10"></p>
                     
                     <form class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -326,7 +335,7 @@
                         </div>
                         <textarea placeholder="Professional Summary" rows="4" class="w-full bg-surface border-transparent focus:border-brand-blue focus:ring-0 rounded-2xl p-5 text-sm"></textarea>
                         
-                        <button type="submit" class="w-full bg-brand-blue text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-brand-dark transition-all shadow-blue">
+                        <button type="submit" class="w-full bg-brand-blue text-white py-4 md:py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] md:text-xs hover:bg-brand-dark transition-all shadow-blue">
                             Submit Application
                         </button>
                     </form>
@@ -335,46 +344,46 @@
         </div>
 
         <!-- Working Culture -->
-        <section class="py-32 bg-brand-dark text-white overflow-hidden">
-            <div class="px-8 max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-24 items-center">
+        <section class="py-16 md:py-32 bg-brand-dark text-white overflow-hidden">
+            <div class="px-6 md:px-8 max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-12 md:gap-24 items-center">
                 <div class="flex-1 reveal">
-                    <h2 class="text-6xl font-black font-headline tracking-tighter mb-10 leading-[0.95]">
+                    <h2 class="text-4xl md:text-6xl font-black font-headline tracking-tighter mb-8 md:mb-10 leading-[1] md:leading-[0.95]">
                         Driven by <br/><span class="text-brand-blue">Collective</span> Motion
                     </h2>
                     <p class="text-white/60 text-xl leading-relaxed mb-12 max-w-xl font-light">
                         At Bluesun, culture isn't a perk—it's the fuel. We foster an environment of radical ownership where every technician, executive, and coordinator is treated as an architect of our shared legacy.
                     </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                         <div>
-                            <div class="text-brand-blue font-black text-2xl mb-4 tracking-tighter">Flexible Environment</div>
+                            <div class="text-brand-blue font-black text-xl md:text-2xl mb-3 md:mb-4 tracking-tighter">Flexible Environment</div>
                             <p class="text-sm text-white/40 leading-relaxed">Dynamic work models that balance technical output with personal stability and professional growth.</p>
                         </div>
                         <div>
-                            <div class="text-brand-blue font-black text-2xl mb-4 tracking-tighter">Growth Hub</div>
+                            <div class="text-brand-blue font-black text-xl md:text-2xl mb-3 md:mb-4 tracking-tighter">Growth Hub</div>
                             <p class="text-sm text-white/40 leading-relaxed">Continuous training and certification programs in advanced industrial logistics.</p>
                         </div>
                     </div>
                 </div>
-                <div class="flex-1 relative reveal">
-                    <div class="relative w-full aspect-[4/5] rounded-[3rem] overflow-hidden border-[12px] border-white/5 group">
+                <div class="flex-1 relative w-full reveal">
+                    <div class="relative w-full aspect-[4/5] rounded-[2rem] md:rounded-[3rem] overflow-hidden border-[8px] md:border-[12px] border-white/5 group">
                         <img src="img/team.jpg" alt="Bluesun Culture" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
                         <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-60"></div>
                     </div>
                     <!-- Floating Badge -->
-                    <div class="absolute -bottom-8 -left-8 bg-brand-blue p-10 rounded-[2rem] shadow-blue reveal" style="transition-delay: 300ms;">
-                        <div class="font-black font-headline text-5xl tracking-tighter">94%</div>
-                        <div class="text-[10px] uppercase font-bold tracking-[0.2em] text-white/80 mt-1">Employee Retention</div>
+                    <div class="absolute -bottom-6 -left-4 md:-bottom-8 md:-left-8 bg-brand-blue p-6 md:p-10 rounded-2xl md:rounded-[2rem] shadow-blue reveal" style="transition-delay: 300ms;">
+                        <div class="font-black font-headline text-3xl md:text-5xl tracking-tighter text-white">94%</div>
+                        <div class="text-[8px] md:text-[10px] uppercase font-bold tracking-[0.2em] text-white/80 mt-1">Employee Retention</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Get in Touch Form (Added) -->
-        <section id="contact" class="py-24 bg-surface relative">
+        <section id="contact" class="py-16 md:py-24 bg-surface relative">
             <div class="absolute top-0 left-0 w-full h-1/2 bg-brand-dark"></div>
             <div class="max-w-[1200px] mx-auto px-8 relative z-10 reveal">
                 <div class="bg-white flex flex-col lg:flex-row shadow-luxury border border-surface-container/50">
-                    <div class="lg:w-2/5 p-12 lg:p-16 bg-brand-dark text-white relative overflow-hidden">
+                    <div class="lg:w-2/5 p-8 lg:p-16 bg-brand-dark text-white relative overflow-hidden">
                         <div class="absolute bottom-0 right-0 w-64 h-64 bg-brand-blue/10 rounded-tl-full blur-3xl">
                         </div>
                         <div class="relative z-10">
@@ -414,7 +423,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-3/5 p-12 lg:p-16 bg-surface">
+                    <div class="lg:w-3/5 p-8 lg:p-16 bg-surface">
                         <form class="space-y-8">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div class="space-y-2">

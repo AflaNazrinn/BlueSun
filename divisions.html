@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light scroll-smooth">
+<html style="margin:0!important;padding:0!important;" lang="en" class="light scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -62,6 +62,13 @@
         .editorial-grid {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .editorial-grid {
+                gap: 3rem;
+            }
         }
 
         .material-symbols-outlined {
@@ -70,7 +77,7 @@
     </style>
 </head>
 
-<body
+<body style="margin:0!important;padding:0!important;"
     class="bg-surface font-body text-on-surface antialiased overflow-x-hidden selection:bg-brand-blue selection:text-white">
 
     <!-- Top Bar -->
@@ -159,7 +166,7 @@
 
     <main class="">
         <!-- Hero Section: Editorial Style -->
-        <section class="relative h-[614px] flex items-center overflow-hidden bg-primary">
+        <section class="relative h-[450px] md:h-[614px] flex items-center overflow-hidden bg-primary">
             <div class="absolute inset-0 z-0">
                 <img id="hero-image" alt="Service Divisions"
                     class="w-full h-full object-cover opacity-40 transition-opacity duration-700" src="img/divi.jpg" />
@@ -171,7 +178,7 @@
                         <span class="text-brand-blue tracking-[0.3em] font-bold text-sm mb-4 block uppercase">Bluesun
                             International LLC</span>
                         <h1
-                            class="text-6xl md:text-7xl font-extrabold text-white font-headline leading-tight tracking-tighter mb-6">
+                            class="text-4xl md:text-7xl font-extrabold text-white font-headline leading-tight tracking-tighter mb-6">
                             Service <br /><span class="text-brand-blue" id="hero-subtitle">Divisions</span>
                         </h1>
                     </div>
@@ -180,20 +187,20 @@
         </section>
 
         <!-- Secondary Navigation / Tabs -->
-        <section class="sticky top-20 z-40 bg-surface/80 backdrop-blur-md py-8 border-b border-surface-container">
-            <div class="max-w-[1440px] mx-auto px-8 flex justify-center">
+        <section class="sticky top-[72px] md:top-20 z-40 bg-surface/90 backdrop-blur-md py-4 md:py-8 border-b border-surface-container">
+            <div class="max-w-[1440px] mx-auto px-4 md:px-8 flex justify-center">
                 <div
-                    class="inline-flex flex-col md:flex-row bg-white rounded-2xl shadow-luxury border border-surface-container overflow-hidden">
+                    class="flex flex-row overflow-x-auto no-scrollbar bg-white rounded-xl md:rounded-2xl shadow-luxury border border-surface-container">
                     <button data-tab="fluid"
-                        class="tab-btn px-10 py-5 text-xs font-bold tracking-widest uppercase text-brand-blue bg-surface-container-low/50 whitespace-nowrap transition-all border-b-2 md:border-b-0 md:border-r border-surface-container">
-                        Fluid Transfer Technology
+                        class="tab-btn px-6 md:px-10 py-4 md:py-5 text-[10px] md:text-xs font-bold tracking-widest uppercase text-brand-blue bg-surface-container-low/50 whitespace-nowrap transition-all border-r border-surface-container">
+                        Fluid Transfer
                     </button>
                     <button data-tab="lifting"
-                        class="tab-btn px-10 py-5 text-xs font-bold tracking-widest uppercase text-on-surface-variant hover:text-brand-blue transition-colors whitespace-nowrap transition-all border-b-2 md:border-b-0 md:border-r border-surface-container">
-                        Lifting And Rigging Technology
+                        class="tab-btn px-6 md:px-10 py-4 md:py-5 text-[10px] md:text-xs font-bold tracking-widest uppercase text-on-surface-variant hover:text-brand-blue transition-colors whitespace-nowrap transition-all border-r border-surface-container">
+                        Lifting & Rigging
                     </button>
                     <button data-tab="safety"
-                        class="tab-btn px-10 py-5 text-xs font-bold tracking-widest uppercase text-on-surface-variant hover:text-brand-blue transition-colors whitespace-nowrap transition-all">
+                        class="tab-btn px-6 md:px-10 py-4 md:py-5 text-[10px] md:text-xs font-bold tracking-widest uppercase text-on-surface-variant hover:text-brand-blue transition-colors whitespace-nowrap transition-all">
                         Safety Products
                     </button>
                 </div>
@@ -546,26 +553,26 @@
                     </div>
                     <!-- Right: Visual Anchors & Value Prop -->
                     <div class="col-span-12 lg:col-span-5 flex flex-col gap-8">
-                        <div class="relative rounded-2xl overflow-hidden h-[400px] shadow-2xl">
+                        <div class="relative rounded-2xl overflow-hidden h-[300px] md:h-[400px] shadow-2xl">
                             <img alt="Division Detail" class="w-full h-full object-cover" src="${data.sideImg}"/>
                             <div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
                         </div>
-                        <div class="bg-primary p-10 rounded-2xl text-white">
-                            <h3 class="text-2xl font-bold font-headline mb-8">Why Choose Our Solutions?</h3>
-                            <ul class="space-y-6">
+                        <div class="bg-primary p-6 md:p-10 rounded-2xl text-white">
+                            <h3 class="text-xl md:text-2xl font-bold font-headline mb-6 md:mb-8">Why Choose Our Solutions?</h3>
+                            <ul class="space-y-4 md:space-y-6">
                                 ${data.features.map(f => `
                                     <li class="flex items-start gap-4">
                                         <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
                                         <div>
-                                            <p class="font-bold">${f.title}</p>
-                                            <p class="text-white/60 text-sm">${f.desc}</p>
+                                            <p class="font-bold text-sm md:text-base">${f.title}</p>
+                                            <p class="text-white/60 text-xs md:text-sm">${f.desc}</p>
                                         </div>
                                     </li>
                                 `).join('')}
                             </ul>
                         </div>
-                        <div class="p-8 border-r-4 border-brand-blue bg-surface-container-low rounded-l-xl text-right">
-                            <p class="text-lg italic font-medium text-primary">
+                        <div class="p-6 md:p-8 border-r-4 border-brand-blue bg-surface-container-low rounded-l-xl text-right">
+                            <p class="text-base md:text-lg italic font-medium text-primary">
                                 "${data.quote}"
                             </p>
                         </div>
@@ -602,6 +609,7 @@
             }
         });
     </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
