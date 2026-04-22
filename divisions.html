@@ -60,13 +60,15 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .editorial-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
         }
 
         @media (min-width: 1024px) {
             .editorial-grid {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
                 gap: 3rem;
             }
         }
@@ -517,64 +519,63 @@
 
                 // Update Main Content
                 content.innerHTML = `
-                    <!-- Left: Content & Intro -->
-                    <div class="col-span-12 lg:col-span-7">
-                        <div class="mb-16">
-                            <h2 class="text-4xl font-extrabold font-headline text-primary mb-8 tracking-tighter">
-                                ${data.title}
-                            </h2>
-                            <p class="text-xl text-on-surface-variant leading-relaxed mb-8">
-                                ${data.description}
-                            </p>
-                            <div class="flex items-center gap-4 p-6 bg-surface-container-low rounded-xl">
-                                <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center text-white">
-                                    <span class="material-symbols-outlined">verified</span>
+                    <div class="editorial-grid">
+                        <div class="lg:col-span-7 reveal">
+                            <div class="mb-12 md:mb-16">
+                                <h2 class="text-3xl md:text-5xl font-black font-headline text-brand-dark mb-6 md:mb-8 tracking-tighter leading-tight">
+                                    ${data.title}
+                                </h2>
+                                <p class="text-on-surface-variant text-xl md:text-3xl font-medium leading-tight mb-8 md:mb-12">
+                                    ${data.description}
+                                </p>
+                                <div class="flex items-center gap-6 p-6 md:p-8 bg-brand-blue/5 rounded-3xl border border-brand-blue/10">
+                                    <span class="material-symbols-outlined text-brand-blue text-4xl">verified</span>
+                                    <p class="text-brand-dark font-bold text-sm md:text-lg leading-tight">Certified solutions for high-risk industrial requirements.</p>
                                 </div>
-                                <p class="font-medium text-primary">Certified solutions for high-risk industrial requirements.</p>
+                            </div>
+                            
+                            <div class="mb-12 lg:mb-0">
+                                <h3 class="text-2xl md:text-4xl font-black text-brand-dark mb-8 md:mb-12 flex items-center gap-6">
+                                    Our Product Range
+                                    <div class="h-px bg-surface-container flex-grow"></div>
+                                </h3>
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                                    ${data.products.map(p => `
+                                        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-surface-container hover:shadow-luxury transition-all duration-300 group text-center flex flex-col items-center justify-center min-h-[160px] md:min-h-[200px]">
+                                            <div class="w-12 h-12 mb-4">
+                                                <span class="material-symbols-outlined text-brand-blue text-4xl group-hover:scale-110 transition-transform">${p.icon}</span>
+                                            </div>
+                                            <p class="font-bold text-xs md:text-sm leading-tight text-brand-dark uppercase tracking-wider">${p.name}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
                             </div>
                         </div>
-                        <!-- Bento Grid: Our Product Range -->
-                        <div>
-                            <h3 class="text-2xl font-bold font-headline mb-10 flex items-center gap-3">
-                                Our Product Range
-                                <span class="h-px flex-grow bg-outline-variant/30"></span>
-                            </h3>
-                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                ${data.products.map(p => `
-                                    <div class="p-6 bg-surface-container-lowest rounded-xl hover:shadow-xl transition-all border border-transparent hover:border-secondary/20 group">
-                                        <div class="flex items-center justify-center w-12 h-12 mb-4">
-                                            <span class="material-symbols-outlined text-secondary text-3xl group-hover:scale-110 transition-transform">${p.icon}</span>
-                                        </div>
-                                        <p class="font-bold text-sm leading-tight text-primary">${p.name}</p>
-                                    </div>
-                                `).join('')}
+
+                        <div class="lg:col-span-5 flex flex-col gap-8 reveal" style="transition-delay: 200ms;">
+                            <div class="relative rounded-2xl md:rounded-[2rem] overflow-hidden h-[300px] md:h-[500px] shadow-luxury">
+                                <img alt="${data.title}" class="w-full h-full object-cover" src="${data.sideImg}"/>
+                                <div class="absolute inset-0 bg-brand-dark/20"></div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- Right: Visual Anchors & Value Prop -->
-                    <div class="col-span-12 lg:col-span-5 flex flex-col gap-8">
-                        <div class="relative rounded-2xl overflow-hidden h-[300px] md:h-[400px] shadow-2xl">
-                            <img alt="Division Detail" class="w-full h-full object-cover" src="${data.sideImg}"/>
-                            <div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
-                        </div>
-                        <div class="bg-primary p-6 md:p-10 rounded-2xl text-white">
-                            <h3 class="text-xl md:text-2xl font-bold font-headline mb-6 md:mb-8">Why Choose Our Solutions?</h3>
-                            <ul class="space-y-4 md:space-y-6">
-                                ${data.features.map(f => `
-                                    <li class="flex items-start gap-4">
-                                        <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
-                                        <div>
-                                            <p class="font-bold text-sm md:text-base">${f.title}</p>
-                                            <p class="text-white/60 text-xs md:text-sm">${f.desc}</p>
-                                        </div>
-                                    </li>
-                                `).join('')}
-                            </ul>
-                        </div>
-                        <div class="p-6 md:p-8 border-r-4 border-brand-blue bg-surface-container-low rounded-l-xl text-right">
-                            <p class="text-base md:text-lg italic font-medium text-primary">
-                                "${data.quote}"
-                            </p>
+                            <div class="bg-brand-dark p-8 md:p-12 rounded-[2rem] text-white">
+                                <h3 class="text-xl md:text-2xl font-black font-headline mb-8 tracking-tight">Why Choose Our Solutions?</h3>
+                                <ul class="space-y-6">
+                                    ${data.features.map(f => `
+                                        <li class="flex items-start gap-4">
+                                            <span class="material-symbols-outlined text-brand-blue mt-1">check_circle</span>
+                                            <div>
+                                                <p class="font-bold text-base md:text-lg tracking-tight">${f.title}</p>
+                                                <p class="text-white/60 text-sm leading-relaxed">${f.desc}</p>
+                                            </div>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                            <div class="p-8 border-l-4 border-brand-blue bg-surface-container rounded-r-2xl">
+                                <p class="text-lg italic font-medium text-brand-dark">
+                                    "${data.quote}"
+                                </p>
+                            </div>
                         </div>
                     </div>
                 `;
