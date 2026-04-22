@@ -69,7 +69,8 @@
             .editorial-grid {
                 display: grid;
                 grid-template-columns: repeat(12, 1fr);
-                gap: 3rem;
+                gap: 5rem;
+                align-items: flex-start;
             }
         }
 
@@ -106,8 +107,8 @@
 
     <!-- Main Navigation -->
     <nav id="main-nav"
-        class="sticky top-0 w-full z-40 bg-white/70 backdrop-blur-2xl border-b border-surface-container transition-all duration-500">
-        <div class="flex justify-between items-center max-w-[1440px] mx-auto px-8 py-5 lg:py-6">
+        class="sticky top-0 w-full z-40 bg-white border-b border-surface-container transition-all duration-500">
+        <div class="flex justify-between items-center max-w-[1440px] mx-auto px-8 py-4 lg:py-5">
             <!-- Logo -->
             <div class="h-10 lg:h-12 relative z-50">
                 <img src="img/logo.png" alt="Bluesun International Logo" class="h-full object-contain">
@@ -168,7 +169,7 @@
 
     <main class="">
         <!-- Hero Section: Editorial Style -->
-        <section class="relative h-[450px] md:h-[614px] flex items-center overflow-hidden bg-primary">
+        <section class="relative h-[400px] md:h-[500px] flex items-center overflow-hidden bg-brand-dark">
             <div class="absolute inset-0 z-0">
                 <img id="hero-image" alt="Service Divisions"
                     class="w-full h-full object-cover opacity-40 transition-opacity duration-700" src="img/divi.jpg" />
@@ -180,7 +181,7 @@
                         <span class="text-brand-blue tracking-[0.3em] font-bold text-sm mb-4 block uppercase">Bluesun
                             International LLC</span>
                         <h1
-                            class="text-4xl md:text-7xl font-extrabold text-white font-headline leading-tight tracking-tighter mb-6">
+                            class="text-4xl md:text-5xl font-extrabold text-white font-headline leading-tight tracking-tighter mb-6">
                             Service <br /><span class="text-brand-blue" id="hero-subtitle">Divisions</span>
                         </h1>
                     </div>
@@ -188,11 +189,10 @@
             </div>
         </section>
 
-        <!-- Secondary Navigation / Tabs -->
-        <section class="sticky top-[72px] md:top-20 z-40 bg-surface/90 backdrop-blur-md py-4 md:py-8 border-b border-surface-container">
-            <div class="max-w-[1440px] mx-auto px-4 md:px-8 flex justify-center">
+        <section class="py-12 bg-white">
+            <div class="max-w-[1440px] mx-auto px-8 flex justify-center">
                 <div
-                    class="flex flex-row overflow-x-auto no-scrollbar bg-white rounded-xl md:rounded-2xl shadow-luxury border border-surface-container">
+                    class="flex flex-row bg-white rounded-2xl p-1 shadow-luxury border border-surface-container">
                     <button data-tab="fluid"
                         class="tab-btn px-6 md:px-10 py-4 md:py-5 text-[10px] md:text-xs font-bold tracking-widest uppercase text-brand-blue bg-surface-container-low/50 whitespace-nowrap transition-all border-r border-surface-container">
                         Fluid Transfer
@@ -209,12 +209,9 @@
             </div>
         </section>
 
-        <!-- Content Canvas -->
-        <section class="py-24 max-w-[1440px] mx-auto px-8">
-            <div id="tab-content" class="editorial-grid gap-12 transition-all duration-500 opacity-100">
-                <!-- Content will be injected here by JS -->
-            </div>
-        </section>
+        <div id="tab-content" class="max-w-[1440px] mx-auto px-8 pb-32 transition-all duration-500">
+            <!-- Content will be injected here -->
+        </div>
 
 
     </main>
@@ -473,7 +470,7 @@
                     { name: "Twill and Cotton Coveralls", icon: "apparel" },
                     { name: "Fire & Safety Products", icon: "fire_extinguisher" },
                     { name: "Personal Protective Equipment (PPE)", icon: "health_and_safety" },
-                    { name: "Life Saving Equipment", icon: "life_saver" }
+                    { name: "Life Saving", icon: "lifesaver" }
                 ],
                 features: [
                     { title: "High-quality", desc: "Durable materials for maximum protection." },
@@ -522,59 +519,56 @@
                     <div class="editorial-grid">
                         <div class="lg:col-span-7 reveal">
                             <div class="mb-12 md:mb-16">
-                                <h2 class="text-3xl md:text-5xl font-black font-headline text-brand-dark mb-6 md:mb-8 tracking-tighter leading-tight">
+                                <h2 class="text-3xl md:text-6xl font-black font-headline text-brand-dark mb-6 md:mb-8 tracking-tighter leading-[1.1]">
                                     ${data.title}
                                 </h2>
-                                <p class="text-on-surface-variant text-xl md:text-3xl font-medium leading-tight mb-8 md:mb-12">
+                                <p class="text-on-surface-variant text-xl md:text-2xl font-medium leading-relaxed mb-8 md:mb-12">
                                     ${data.description}
                                 </p>
-                                <div class="flex items-center gap-6 p-6 md:p-8 bg-brand-blue/5 rounded-3xl border border-brand-blue/10">
-                                    <span class="material-symbols-outlined text-brand-blue text-4xl">verified</span>
-                                    <p class="text-brand-dark font-bold text-sm md:text-lg leading-tight">Certified solutions for high-risk industrial requirements.</p>
+                                <div class="flex items-center gap-6 p-6 md:p-10 bg-brand-blue/5 rounded-[2rem] border border-brand-blue/10">
+                                    <div class="w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-secondary text-4xl">verified</span>
+                                    </div>
+                                    <p class="text-brand-dark font-bold text-sm md:text-xl leading-snug">Certified industrial solutions optimized for performance and long-term durability.</p>
                                 </div>
                             </div>
                             
                             <div class="mb-12 lg:mb-0">
-                                <h3 class="text-2xl md:text-4xl font-black text-brand-dark mb-8 md:mb-12 flex items-center gap-6">
+                                <h3 class="text-2xl md:text-3xl font-black text-brand-dark mb-8 md:mb-12 flex items-center gap-6">
                                     Our Product Range
                                     <div class="h-px bg-surface-container flex-grow"></div>
                                 </h3>
-                                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
                                     ${data.products.map(p => `
-                                        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-surface-container hover:shadow-luxury transition-all duration-300 group text-center flex flex-col items-center justify-center min-h-[160px] md:min-h-[200px]">
-                                            <div class="w-12 h-12 mb-4">
-                                                <span class="material-symbols-outlined text-brand-blue text-4xl group-hover:scale-110 transition-transform">${p.icon}</span>
+                                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-surface-container hover:shadow-luxury hover:border-secondary/20 transition-all duration-300 group text-center flex flex-col items-center justify-center min-h-[140px]">
+                                            <div class="w-10 h-10 mb-2 bg-surface rounded-lg flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+                                                <span class="material-symbols-outlined text-secondary text-2xl group-hover:scale-110 transition-transform flex items-center justify-center">${p.icon}</span>
                                             </div>
-                                            <p class="font-bold text-xs md:text-sm leading-tight text-brand-dark uppercase tracking-wider">${p.name}</p>
+                                            <p class="font-bold text-[9px] md:text-[10px] leading-tight text-brand-dark uppercase tracking-widest px-1">${p.name}</p>
                                         </div>
                                     `).join('')}
                                 </div>
                             </div>
                         </div>
 
-                        <div class="lg:col-span-5 flex flex-col gap-8 reveal" style="transition-delay: 200ms;">
-                            <div class="relative rounded-2xl md:rounded-[2rem] overflow-hidden h-[300px] md:h-[500px] shadow-luxury">
+                        <div class="lg:col-span-5 flex flex-col gap-10 reveal" style="transition-delay: 200ms;">
+                            <div class="relative rounded-[2.5rem] overflow-hidden h-[400px] md:h-[600px] shadow-luxury">
                                 <img alt="${data.title}" class="w-full h-full object-cover" src="${data.sideImg}"/>
-                                <div class="absolute inset-0 bg-brand-dark/20"></div>
+                                <div class="absolute inset-0 bg-brand-dark/10"></div>
                             </div>
-                            <div class="bg-brand-dark p-8 md:p-12 rounded-[2rem] text-white">
-                                <h3 class="text-xl md:text-2xl font-black font-headline mb-8 tracking-tight">Why Choose Our Solutions?</h3>
-                                <ul class="space-y-6">
+                            <div class="bg-brand-dark p-10 md:p-14 rounded-[3rem] text-white">
+                                <h3 class="text-2xl md:text-3xl font-black font-headline mb-10 tracking-tight">Industrial Excellence</h3>
+                                <ul class="space-y-8">
                                     ${data.features.map(f => `
-                                        <li class="flex items-start gap-4">
-                                            <span class="material-symbols-outlined text-brand-blue mt-1">check_circle</span>
+                                        <li class="flex items-start gap-5">
+                                            <span class="material-symbols-outlined text-secondary mt-1 text-3xl">check_circle</span>
                                             <div>
-                                                <p class="font-bold text-base md:text-lg tracking-tight">${f.title}</p>
-                                                <p class="text-white/60 text-sm leading-relaxed">${f.desc}</p>
+                                                <p class="font-bold text-lg md:text-xl tracking-tight">${f.title}</p>
+                                                <p class="text-white/60 text-sm md:text-base leading-relaxed">${f.desc}</p>
                                             </div>
                                         </li>
                                     `).join('')}
                                 </ul>
-                            </div>
-                            <div class="p-8 border-l-4 border-brand-blue bg-surface-container rounded-r-2xl">
-                                <p class="text-lg italic font-medium text-brand-dark">
-                                    "${data.quote}"
-                                </p>
                             </div>
                         </div>
                     </div>
